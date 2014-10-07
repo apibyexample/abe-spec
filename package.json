@@ -1,0 +1,32 @@
+{
+  "name": "abe-spec",
+  "version": "0.1.0",
+  "description": "Spec and Documentation for the API by example (ABE) format",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/apibyexample/abe-spec.git"
+  },
+  "keywords": [
+    "abe",
+    "json",
+    "apibyexample",
+    "api"
+  ],
+  "author": [
+    "API By Example <apibyexample@gmail.com>",
+    "Nick White <nickswhite89@gmail.com> (http://nwhite89.github.io/)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apibyexample/abe-spec/issues"
+  },
+  "homepage": "https://github.com/apibyexample/abe-spec",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-jshint": "~0.10.0"
+  }
+}
