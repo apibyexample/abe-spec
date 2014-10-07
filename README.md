@@ -1,3 +1,6 @@
+[![Build Status](http://img.shields.io/travis/apibyexample/abe-spec/master.svg)](https://travis-ci.org/apibyexample/abe-spec)
+[![devDependency Status](https://david-dm.org/apibyexample/abe-spec/dev-status.svg)](https://david-dm.org/apibyexample/abe-spec#info=devDependencies)
+
 API by Example
 ==============
 
@@ -52,7 +55,7 @@ The skeleton of an ABE file is:
 * `description` is an optional text describing the API or the concrete example
 * `label` is an arbitrary label that you can use to refer to one concrete
   example, useful when you want to include more than one possible responses.
-  For instance, `"OK"` and `"Not found"`, or `"Empty"` versus `"One"` 
+  For instance, `"OK"` and `"Not found"`, or `"Empty"` versus `"One"`
   versus `"Many"`.
 * `http method` is one of the HTTP verbs `GET`, `POST`, `PUT`...
 * `params` are query string parameters to add to the URL
@@ -102,5 +105,3 @@ To illustrate with a concrete example:
     }
 }
 ```
-
-
