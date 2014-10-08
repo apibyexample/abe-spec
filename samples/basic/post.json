@@ -1,0 +1,31 @@
+{
+    "description": "Sample for ABE implementations",
+    "url": "/basic",
+    "method": "POST",
+    "examples": {
+        "OK": {
+            "description": "Sample successful POST",
+            "request": {
+                "url": "/basic",
+                "queryParams": {
+                    "verbose": "0"
+                },
+                "headers": {
+                    "Content-type": "application/json"
+                },
+                "body": {
+                    "payload": "Sample"
+                }
+            },
+            "response": {
+                "status": 201,
+                "headers": {
+                    "Content-type": "application/json"
+                },
+                "body": {
+                    "id": 1, "payload": "Sample"
+                }
+            }
+        }
+    }
+}

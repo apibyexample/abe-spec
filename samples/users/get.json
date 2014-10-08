@@ -1,0 +1,28 @@
+{
+    "description": "Retrieve a specific user",
+    "url": "/json/users/[0-9]",
+    "method": "GET",
+    "examples": {
+        "ON": {
+            "description": "User response with id of 1",
+            "request": {
+                "url": "/json/users/1"
+            },
+            "response": {
+                "status": 200,
+                "body": {
+                    "id": 1,
+                    "first-name": "Joe",
+                    "last-name": "Bloggs",
+                    "age": 29,
+                    "address": {
+                        "line-1": "6 White House",
+                        "line-2": "12 Springfield Road",
+                        "county": "Surrey",
+                        "postcode": "SM5 7AQ"
+                    }
+                }
+            }
+        }
+    }
+}
