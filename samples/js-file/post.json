@@ -1,0 +1,24 @@
+{
+    "description": "Generate a JS files",
+    "url": "/json/js-file",
+    "method": "POST",
+    "examples": {
+        "CREATED": {
+            "description": "JS file generated and returned",
+            "request": {
+                "url": "/json/js-file",
+                "queryParams": {},
+                "body": {
+                    "some_content": "hello, world!"
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/javascript"
+                },
+                "body": "function run () {\n  console.log(\"hello, world!\");\n}"
+            }
+        }
+    }
+}
