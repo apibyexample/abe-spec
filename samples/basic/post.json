@@ -6,7 +6,7 @@
         "OK": {
             "description": "Sample successful POST",
             "request": {
-                "url": "/basic"
+                "url": "/basic",
                 "queryParams": {
                     "verbose": "0"
                 },
