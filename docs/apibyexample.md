@@ -6,6 +6,10 @@ legacy system into a decoupled multi-service architecture. The new AngularJS
 front-end talked to a series of backend services, some of which also talked to
 each other. Most of this communication happened via synchronous HTTP API calls.
 
+This is a very simplistic view of our system:
+
+![Simplistic architecture](ABE@Rockabox-project.png "A very simplistic view of our project")
+
 We were very happy about our improved build times, as we now could easily
 build and test each service in isolation. But, these being the early days of
 system building and many moving parts, we were often running into
@@ -90,3 +94,23 @@ repos:
 
 Both `backend` and `UI` have an explicit dependency on the `mocks` repo, that
 can be included either as a `bower` or a Python package (via `pip`).
+
+This is how the setup looks like for service testing. Notice that UI testing
+doesn't use the actual backend, Backend testing does not require the actual
+frontend, and both share the same set of mocks:
+
+![Testing architecture](ABE@Rockabox-testing.png)
+
+Components in blue are out-of-the-box ABE utilities, and green ones are the
+extra scaffolding that we need to write for our testing:
+
+- `Mock backend`: initialised from within your protractor tests, uses
+  `abe-protractor` for the setup.
+- `mocks`: the shared collection of API samples
+- `API tests`: in our case, Django API tests written in Python using the django
+  testing framework. They use `abe-python` to parse ABE files and use them to
+  feed the test API calls and to perform assertions on returned responses.
+- `Factories`: (or fixtures) these are responsible for setting up the test data
+  that will match the API sample expectation. E.g. if the API sample is for
+  retrieving a collection of a resource, it will populate that collection in
+  the backend.
