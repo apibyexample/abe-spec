@@ -4,7 +4,7 @@
 API by Example
 ==============
 
-API by Example (ABE) is a format that can be used to as a contract between services, describe
+API by Example (ABE) is a format that can be used as a contract between services, describe
 APIs in a format that can be programmatically consumed by tools.
 
 The main idea behind it is to illustrate how an API works via concrete
