@@ -1,0 +1,108 @@
+{
+    "title": "API By Example JSON Schema",
+    "type": "object",
+    "properties":{
+        "description": {
+            "description": "A brief description of the API endpoint exemplified by this mock.",
+            "type": "string"
+        },
+        "method": {
+            "description": "Contains the HTTP method of the end-point.",
+            "type": "string",
+            "enum": [
+                "CONNECT",
+                "DELETE",
+                "GET",
+                "HEAD",
+                "OPTIONS",
+                "PATCH",
+                "POST",
+                "PUT",
+                "TRACE"
+            ]
+        },
+        "queryParams": {
+            "description": "Contains the query parameters of the request",
+            "type": "object",
+            "patternProperties": {
+                "(([\\w\\d])+)|((\\d)+)": {
+                    "description": "The individual query parameters (Arrays used for multiple).",
+                    "type": [
+                        "string",
+                        "boolean",
+                        "array"
+                    ]
+                }
+            }
+        },
+        "url": {
+            "type": "string"
+        },
+        "examples": {
+            "description": "Contains your example mocks",
+            "type":[
+                "object",
+                "array"
+            ],
+            "patternProperties": {
+                "(([\\w\\d])+)|((\\d)+)": {
+                    "type": "object",
+                    "properties":{
+                        "description": {
+                            "description": "A brief description about the mock example.",
+                            "type": "string"
+                        },
+                        "request": {
+                            "description": "Contains the data sent to the endpoint, optionally including headers.",
+                            "type": "object",
+                            "properties":{
+                                "body": {
+                                    "description": "Contains the body sent within the request",
+                                    "type": [
+                                        "object",
+                                        "string",
+                                        "array"
+                                    ]
+                                },
+                                "headers": {
+                                    "description": "Contains the information about the headers within the request.",
+                                    "type": "object"
+                                },
+                                "url": {
+                                    "description": "Contains the URL of the mock example",
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "response": {
+                            "description": "Contains information about the response from the API end-point.",
+                            "type": "object",
+                            "properties":{
+                                "body": {
+                                    "description": "Contains the body of the response from the end-point.",
+                                    "type": "object"
+                                },
+                                "headers": {
+                                    "description": "Contains the headers of the response from the end-point.",
+                                    "type": "object"
+                                },
+                                "status": {
+                                    "description": "Contains the status code of the response from the end-point.",
+                                    "type": "number"
+                                }
+                            },
+                            "required": [
+                                "body"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "examples",
+        "method",
+        "url"
+    ]
+}

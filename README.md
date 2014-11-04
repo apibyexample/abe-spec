@@ -4,8 +4,8 @@
 API by Example
 ==============
 
-API by Example (ABE) is a format that can be used to describe APIs in a format
-that can be programmatically consumed by tools.
+API by Example (ABE) is a format that can be used as a contract between services, describe
+APIs in a format that can be programmatically consumed by tools.
 
 The main idea behind it is to illustrate how an API works via concrete
 examples, that can be used to generate tests, stubs and documentation for a
@@ -25,6 +25,9 @@ The main building block of ABE is a JSON file that illustrates one API call.
 One API call is an HTTP request that consists of a URL (pattern), sample
 request data and sample response data. Additional fields are included for
 documentation purposes.
+
+A schema describing the ABE format using [JSON Schema](http://json-schema.org) can be found in
+[schema.json](schema.json)
 
 The skeleton of an ABE file is:
 
@@ -50,9 +53,11 @@ The skeleton of an ABE file is:
     }
 }
 ```
-(TODO: convert the above to JSON schema?).
 
 * `description` is an optional text describing the API or the concrete example
+* `url` is a base location for our API.
+* `examples` contains your different API examples for the contract, this can be
+  in the form of an `array` or an `object`.
 * `label` is an arbitrary label that you can use to refer to one concrete
   example, useful when you want to include more than one possible responses.
   For instance, `"OK"` and `"Not found"`, or `"Empty"` versus `"One"`
