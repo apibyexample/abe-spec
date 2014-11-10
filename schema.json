@@ -72,7 +72,10 @@
                                     "description": "Contains the URL of the mock example",
                                     "type": "string"
                                 }
-                            }
+                            },
+                            "required": [
+                                "url"
+                            ]
                         },
                         "response": {
                             "description": "Contains information about the response from the API end-point.",
@@ -92,9 +95,14 @@
                                 }
                             },
                             "required": [
-                                "body"
+                                "body",
+                                "status"
                             ]
-                        }
+                        },
+                        "required": [
+                            "request",
+                            "response"
+                        ]
                     }
                 }
             }
