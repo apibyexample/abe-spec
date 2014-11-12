@@ -83,7 +83,11 @@
                             "properties":{
                                 "body": {
                                     "description": "Contains the body of the response from the end-point.",
-                                    "type": "object"
+                                    "type": [
+                                        "object",
+                                        "string",
+                                        "array"
+                                    ]
                                 },
                                 "headers": {
                                     "description": "Contains the headers of the response from the end-point.",
